@@ -11,6 +11,14 @@
   max-width: 1128px;
   margin: 0 auto;
   padding: 30px 15px;
+  position: relative;
+}
+.first-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .form-block {
@@ -137,7 +145,7 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 @keyframes rotation {
@@ -150,7 +158,11 @@
   }
 }
 
-.visually-hidden {
+.hidden {
+  display: none;
+}
+
+/* .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -161,4 +173,4 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */

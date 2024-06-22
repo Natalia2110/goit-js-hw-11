@@ -12,7 +12,7 @@ export async function getImages(request) {
   });
 
   const url = `${BASE_URL}${END_POINT}?${params}`;
-  console.log(url);
+//   console.log(url);
 
   const options = {
     headers: {

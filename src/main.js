@@ -22,7 +22,7 @@ formEl.addEventListener('submit', e => {
   e.preventDefault();
   imagesList.innerHTML = '';
   // loaderEl.style.display = 'inline-block';
-  loaderEl.classList.toggle('.visually-hidden');
+//   loaderEl.classList.toggle('.visually-hidden');
 
   const request = e.target.elements.photo.value.trim();
   //   console.log(request);
@@ -30,7 +30,8 @@ formEl.addEventListener('submit', e => {
   if (request === '') {
     showIziToast();
   } else {
-    getImages(request)
+      showLoader();
+      getImages(request)
       .then(data => {
         inputEl.value = '';
         //   loaderEl.style.display = 'none';
@@ -41,7 +42,7 @@ formEl.addEventListener('submit', e => {
         }
       })
       .catch(err => alert(err))
-      .finally(() => loaderEl.classList.toggle('.visually-hidden'));
+      .finally(() => hideLoader());
   }
 });
 
@@ -61,4 +62,12 @@ function showIziToast() {
     iconUrl: imageUrl,
     iconColor: '#FAFAFB',
   });
+};
+
+function showLoader() {
+  loaderEl.classList.remove('hidden');
+}
+
+function hideLoader() {
+  loaderEl.classList.add('hidden');
 }

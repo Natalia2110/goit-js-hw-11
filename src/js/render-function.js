@@ -7,7 +7,7 @@ export function imagesTemplate(arr) {
   const listEl = document.querySelector('.gallery');
 
   const markup = arr.map(imageTemplate).join('');
-  console.log(markup);
+//   console.log(markup);
 
   listEl.insertAdjacentHTML('beforeEnd', markup);
 
@@ -48,4 +48,4 @@ const imageTemplate = image => {
     </li>`;
 };
 
-// const markup = imagesTemplate(data);
+
